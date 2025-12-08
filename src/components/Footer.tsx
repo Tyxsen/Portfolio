@@ -7,7 +7,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Portfolio. Tous droits réservés.
           </p>
           <p className="text-muted-foreground text-sm">
-            Conçu avec passion et créativité.
+            Timéo DELMON
           </p>
         </div>
       </div>

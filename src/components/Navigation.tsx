@@ -39,14 +39,6 @@ const Navigation = () => {
             >
               À propos
             </Link>
-            <Link
-              to="/contact"
-              className={`nav-link text-sm font-medium ${
-                isActive("/contact") ? "text-primary" : "text-foreground"
-              }`}
-            >
-              Contact
-            </Link>
           </div>
 
           <div className="flex items-center gap-3">

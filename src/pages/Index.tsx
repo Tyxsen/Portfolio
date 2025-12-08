@@ -31,14 +31,16 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-              Bonjour, je suis{" "}
-              <span className="text-primary glow-text">Designer</span>
+              Timéo DELMON
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
-              Créateur d'expériences digitales modernes et élégantes.
-              Spécialisé en design UI/UX et développement frontend.
+              Bonjour et bienvenue sur mon Portfolio, 
+              je m'appelle Timéo Delmon et je suis développeur spécialisé dans le jeu vidéo.
+              Je suis encore actuellement dans ma période d'études au Gaming Campus en 3ème année.<br />
+              <br />
+              Vous pourrez retrouver mes différents projets dans la rubrique "<span className="text-primary">Projets</span>".
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in">
               <Button size="lg" asChild>
@@ -47,24 +49,21 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/contact">Me contacter</Link>
-              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Professional Projects */}
+      {/* School Projects */}
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-12">
             <div>
               <h2 className="font-display text-4xl font-bold mb-2">
-                Projets Professionnels
+                Projets d'études
               </h2>
               <p className="text-muted-foreground">
-                Mes réalisations pour des clients et entreprises
+                Certains projets que j'ai du réaliser dans le cadre de mes études.
               </p>
             </div>
             <Button variant="ghost" asChild className="group">
@@ -92,7 +91,7 @@ const Index = () => {
                 Projets Personnels
               </h2>
               <p className="text-muted-foreground">
-                Explorations créatives et side projects
+                Projets que j'ai réalisé en dehors de mon parcours scolaire
               </p>
             </div>
             <Button variant="ghost" asChild className="group">
@@ -111,7 +110,7 @@ const Index = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer />  
     </div>
   );
 };
