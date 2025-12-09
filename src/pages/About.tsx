@@ -7,29 +7,30 @@ import aboutWorkspace from "@/assets/about-workspace.jpg";
 
 const About = () => {
   const skills = [
-    { category: "Design", items: ["UI/UX Design", "Branding", "Prototypage", "Design Systems"] },
-    { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"] },
-    { category: "Outils", items: ["Figma", "Adobe Creative Suite", "Git", "Vite"] },
+    { category: "Unity", items: ["C#", "3D/2D", "UI/UX"] },
+    { category: "C++", items: ["SFML", "SDL", "MongoDB"] },
+    { category: "Python", items: ["Pygame", "Databricks"] },
+    { category: "Outils", items: ["Git", "Figma", "Miro"] },
   ];
 
   const experiences = [
     {
-      role: "Lead Designer",
-      company: "Studio Créatif",
-      period: "2022 - Présent",
-      description: "Direction de projets design et développement d'interfaces utilisateur modernes.",
+      role: "Stagiaire Data Analyste",
+      company: "ENGIE - Courbevoie",
+      period: "Mai 2024 - Juillet 2024",
+      description: "Découverte du monde de la data analyse. Dévéloppement de bilans d'éléctricité en Python pour des particuliers.",
     },
     {
-      role: "UI/UX Designer",
-      company: "Agence Digital",
-      period: "2020 - 2022",
-      description: "Conception d'expériences utilisateur pour des applications web et mobiles.",
+      role: "Stage d'observation (3ème)",
+      company: "RTL - Neuilly-sur-Seine",
+      period: "Février 2019",
+      description: "Participation à la régie de programme radio dans le cadre de mon stage de 3ème.",
     },
     {
-      role: "Développeur Frontend",
-      company: "Tech Startup",
-      period: "2018 - 2020",
-      description: "Développement de sites web responsive et applications React.",
+      role: "Projet GStudio",
+      company: "Gaming Campus",
+      period: "Mai 2025 - Août 2025",
+      description: "Réalisation d'un projet de jeu vidéo en groupe de 5 développeurs et 2 artistes.",
     },
   ];
 
@@ -47,24 +48,30 @@ const About = () => {
               </h1>
               <div className="space-y-4 text-lg text-muted-foreground">
                 <p>
-                  Passionné par le design et le développement web, je crée des
-                  expériences digitales qui allient esthétique et fonctionnalité.
+                  Passionné par les jeux vidéos et le développement, j'ai choisi de
+                  faire mes études à l'école Gaming Campus pour me spécialiser
+                  dans le développement de jeux vidéos.
                 </p>
                 <p>
-                  Avec plus de 5 ans d'expérience dans l'industrie, j'ai eu la
-                  chance de travailler sur des projets variés, des startups
-                  innovantes aux grandes entreprises établies.
+                  J'ai obtenu mon baccalauréat en 2023 et depuis j'ai réalisé plusieurs
+                  projets avec mon école car nous travaillons par semaines de projets.
                 </p>
                 <p>
-                  Mon approche combine une vision créative avec une attention
-                  méticuleuse aux détails techniques, toujours dans le but de
-                  créer des solutions qui font la différence.
+                  J'ai de mon côté pris le temps de faire du blueprint sur Unreal Engine 5
+                  pour apprendre en parallèle de mes études et également de m'améliorer sur Unity que
+                  j'ai déjà parcouru en cours.
                 </p>
               </div>
               <div className="mt-8">
                 <Button size="lg">
-                  <Download className="mr-2 h-5 w-5" />
+                  <a 
+                      href="src\assets\Timeo_DELMON_CV.pdf"
+                      download="Timeo_DELMON_CV.pdf" 
+                      className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-10 px-4 py-2 text-primary-foreground"
+                  >
+                  <Download className="mr-2 h-5 w-5"/>
                   Télécharger mon CV
+                  </a>
                 </Button>
               </div>
             </div>
@@ -84,7 +91,7 @@ const About = () => {
             <h2 className="font-display text-4xl font-bold mb-12">
               Compétences
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-4 gap-8">
               {skills.map((skillGroup) => (
                 <Card key={skillGroup.category} className="p-6">
                   <h3 className="font-display text-xl font-semibold mb-4 text-primary">
