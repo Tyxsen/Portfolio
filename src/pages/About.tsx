@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import aboutWorkspace from "@/assets/about-workspace.jpg";
+import aboutWorkspace from "@/assets/personal-picture.jpeg";
 
 const About = () => {
   const skills = [

@@ -1,4 +1,4 @@
-import projectWeb1 from "@/assets/project-web-1.jpg";
+import projectWeb1 from "@/assets/paws-of-thievery.jpg";
 import projectMobile1 from "@/assets/project-mobile-1.jpg";
 import projectBranding1 from "@/assets/project-branding-1.jpg";
 
@@ -13,28 +13,29 @@ export interface Project {
   fullDescription: string;
   role: string;
   technologies: string[];
-  link?: string;
+  links?: { name: string; url: string; }[];
 }
 
 export const projects: Project[] = [
   {
-    id: "web-design-platform",
-    title: "Plateforme Web Design",
-    category: "Design Web",
+    id: "paws-of-thievery",
+    title: "Paws of Thievery",
+    category: "Unity",
     description:
-      "Une plateforme web moderne avec une interface utilisateur élégante et une expérience fluide.",
+      "Un jeu de puzzle et d'escape où le joueur doit voler des oeuvres d'arts dans un musée.",
     image: projectWeb1,
     year: "2024",
     type: "professional",
     fullDescription:
-      "Création d'une plateforme web complète pour une entreprise de design, incluant un système de gestion de contenu personnalisé, une interface utilisateur moderne et responsive, et une architecture optimisée pour les performances. Le projet a nécessité une collaboration étroite avec l'équipe de développement et les designers pour créer une expérience utilisateur exceptionnelle.",
-    role: "Lead Designer & Développeur Frontend",
+      "Création d'un premier jeu pour découvrir Unity en 1ère année à l'école Gaming Campus. Nous avons du réaliser un jeu lors de deux semaines de projet sur Unity et avec mon groupe (Hugo Magnier, Tristan Van Laecke, Timéo Delmon), nous avons pensé à ce jeu où l'on incarne un petit chat et où le but est de traverser 3 niveaux dans un musée infestés de robots qui te pourchasseront si ils te voient. A chaque niveau, une nouvelle spécificité apparaît pour complexifier le niveau.",
+    role: "Design des niveaux et création du niveau 3",
     technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Vite",
+      "Unity",
+      "Blender",
+    ],
+    links: [
+      { name: "Github", url :"https://github.com/MagnierHugo/UnityProject" },
+      { name: "Itch.io", url: "https://skyrenn.itch.io/paws-of-thievery"},
     ],
   },
   {

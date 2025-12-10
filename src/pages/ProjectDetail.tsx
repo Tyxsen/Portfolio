@@ -110,19 +110,22 @@ const ProjectDetail = () => {
           </div>
 
           {/* CTA */}
-          {project.link && (
+          {project.links && project.links.length > 0 && (
             <div className="flex gap-4">
-              <Button size="lg" asChild>
+            {/* Nous parcourons chaque lien dans le tableau 'project.links' */}
+            {project.links.map((linkItem, index) => (
+              <Button size="lg" asChild key={index}>
                 <a
-                  href={project.link}
+                  href={linkItem.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Voir le projet
+                  {linkItem.name} {/* Utilise le nom du lien */}
                   <ExternalLink className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-            </div>
+            ))}
+          </div>
           )}
         </div>
       </article>

@@ -27,8 +27,8 @@ const Projects = () => {
               <span className="text-primary glow-text">Projets</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Une sélection de mes travaux professionnels et personnels,
-              reflétant ma passion pour le design et le développement.
+              Voici quelques-uns de mes projets professionnels
+              realisés au Gaming Campus.
             </p>
           </div>
 

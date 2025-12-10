@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Navigation = () => {
@@ -49,7 +49,7 @@ const Navigation = () => {
               className="hover:text-primary"
             >
               <a
-                href="https://github.com"
+                href="https://github.com/Tyxsen"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -64,27 +64,12 @@ const Navigation = () => {
               className="hover:text-primary"
             >
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/tim%C3%A9o-delmon-74b9892b3/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button
-              size="icon"
-              variant="ghost"
-              asChild
-              className="hover:text-primary"
-            >
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
               </a>
             </Button>
           </div>

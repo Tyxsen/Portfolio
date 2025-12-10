@@ -60,10 +60,10 @@ const Index = () => {
           <div className="flex items-center justify-between mb-12">
             <div>
               <h2 className="font-display text-4xl font-bold mb-2">
-                Projets d'études
+                Projets Professionnels
               </h2>
               <p className="text-muted-foreground">
-                Certains projets que j'ai du réaliser dans le cadre de mes études.
+                Projets que j'ai dû réaliser dans le cadre de mes études.
               </p>
             </div>
             <Button variant="ghost" asChild className="group">
