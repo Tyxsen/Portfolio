@@ -1,6 +1,6 @@
-import projectWeb1 from "@/assets/paws-of-thievery.jpg";
-import projectMobile1 from "@/assets/project-mobile-1.jpg";
-import projectBranding1 from "@/assets/project-branding-1.jpg";
+import pawsOfThievery from "@/assets/paws-of-thievery.jpg";
+import legendOfGevievre from "@/assets/legend-of-gevievre.jpg";
+import spaceRebellion from "@/assets/space-rebellion.jpg";
 
 export interface Project {
   id: string;
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     category: "Unity",
     description:
       "Un jeu de puzzle et d'escape où le joueur doit voler des oeuvres d'arts dans un musée.",
-    image: projectWeb1,
+    image: pawsOfThievery,
     year: "2024",
     type: "professional",
     fullDescription:
@@ -32,6 +32,7 @@ export const projects: Project[] = [
     technologies: [
       "Unity",
       "Blender",
+      "Visual Studio 2022",
     ],
     links: [
       { name: "Github", url :"https://github.com/MagnierHugo/UnityProject" },
@@ -39,56 +40,38 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "mobile-app-ui",
-    title: "Application Mobile UI",
-    category: "Design Mobile",
+    id: "legend-of-gevievre",
+    title: "Legend of Gevièvre",
+    category: "Unity",
     description:
-      "Interface utilisateur innovante pour une application mobile avec des animations fluides.",
-    image: projectMobile1,
-    year: "2024",
+      "Jeu réalisé durant une Game Jam dont le thème était It's not a bug, it's a feature.",
+    image: legendOfGevievre,
+    year: "2025",
     type: "professional",
     fullDescription:
-      "Conception et développement de l'interface utilisateur d'une application mobile innovante, mettant l'accent sur l'expérience utilisateur et les interactions tactiles. Le projet comprenait la création de prototypes interactifs, des tests utilisateurs et l'implémentation finale avec des animations soignées.",
-    role: "UI/UX Designer",
-    technologies: ["Figma", "React Native", "TypeScript", "Animations"],
-  },
-  {
-    id: "brand-identity",
-    title: "Identité de Marque",
-    category: "Branding",
-    description:
-      "Création d'une identité visuelle complète pour une startup technologique.",
-    image: projectBranding1,
-    year: "2023",
-    type: "professional",
-    fullDescription:
-      "Développement complet d'une identité de marque pour une startup technologique, incluant la création du logo, la charte graphique, les supports de communication et les guidelines de marque. Le projet a nécessité une recherche approfondie sur l'industrie et les concurrents pour créer une identité unique et mémorable.",
-    role: "Brand Designer",
-    technologies: [
-      "Illustrator",
-      "Photoshop",
-      "Figma",
-      "Brand Guidelines",
+      "Réalisation d'un jeu lors de ma première Game Jam, nous étions un groupe de 8 avec seulement 1 artiste qui a réalisé tous les assets du jeu. Mon rôle dans ce projet a été dans un premier temps de réaliser le système de level up. J'ai géré la création des différentes boules d'xp avec un UI incluant la barre d'xp et le choix des cartes des différentes capacités. Une fois cela fini, je me suis occupé de réaliser la scène de Game du jeu et d'assembler les différents travaux de chacun dans cette scène. Et pour finir j'ai réalisé les différents menus du jeu (Principal, Settings et de Fin de jeu avec le temps de la run affiché.",
+    role: "Système de Level Up et UI",
+    technologies: ["Unity", "Visual Studio 2022"],
+    links: [
+      { name: "Github", url :"https://github.com/MagnierHugo/LegendOfGevievre" },
+      { name: "Itch.io", url: "https://skyrenn.itch.io/legend-of-gevievre"},
     ],
   },
   {
-    id: "portfolio-redesign",
-    title: "Refonte Portfolio",
-    category: "Design Web",
+    id: "space_rebellion",
+    title: "Space Rebellion",
+    category: "C++",
     description:
-      "Refonte complète d'un portfolio créatif avec focus sur les animations.",
-    image: projectWeb1,
-    year: "2023",
-    type: "personal",
+      "Shoot'em Up réalisé en C++ avec la bibliothèque SFML.",
+    image: spaceRebellion,
+    year: "2024",
+    type: "professional",
     fullDescription:
-      "Projet personnel de refonte d'un portfolio créatif, explorant de nouvelles techniques d'animation et de mise en page. L'objectif était de créer une expérience immersive tout en maintenant une navigation intuitive et des performances optimales.",
-    role: "Designer & Développeur",
-    technologies: [
-      "React",
-      "Framer Motion",
-      "GSAP",
-      "Three.js",
-      "WebGL",
+      "Space Rebellion est un shoot'em up réalisé en C++ avec la bibliothèque SFML lors d'un projet étudiant de 2 semaines regroupant une équipe Tech (6 personnes) et une équipe Art (4 personnes), nous étions en collaboration avec le musée de l'automobile Henri Malartre. Mon rôle dans ce projet a été de réaliser dans un premier temps l'implémentation du son, puis une fois cela fait, je me suis occupé de réaliser tous les menus du jeu.",
+    role: "Implémentation du Son et UI",
+    technologies: ["SFML", "Visual Studio 2022"],
+    links: [
+      { name: "Github", url :"https://github.com/Tyxsen/Space_Rebellion" },
     ],
   },
 ];
