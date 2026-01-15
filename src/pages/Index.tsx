@@ -38,7 +38,7 @@ const Index = () => {
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
               Bonjour et bienvenue sur mon Portfolio, 
               je m'appelle Timéo Delmon et je suis développeur spécialisé dans le jeu vidéo.
-              Je suis encore actuellement dans ma période d'études au Gaming Campus en 3ème année.<br />
+              Je suis actuellement dans ma période d'études au Gaming Campus en 3ème année.<br />
               <br />
               Vous pourrez retrouver mes différents projets dans la rubrique "<span className="text-primary">Projets</span>".
             </p>

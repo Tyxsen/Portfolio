@@ -7,6 +7,7 @@ import aboutWorkspace from "@/assets/personal-picture.jpeg";
 
 const About = () => {
   const skills = [
+    { category: "Unreal Engine", items: ["Blueprint", "C++"] },
     { category: "Unity", items: ["C#", "3D/2D", "UI/UX"] },
     { category: "C++", items: ["SFML", "SDL", "MongoDB"] },
     { category: "Python", items: ["Pygame", "Databricks"] },
