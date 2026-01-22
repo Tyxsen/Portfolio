@@ -1,4 +1,4 @@
-import pawsOfThievery from "@/assets/paws-of-thievery.jpg";
+import pawsOfThievery from "@/assets/paws-of-thievery_gameplay.png";
 import legendOfGevievre from "@/assets/legend-of-gevievre.jpg";
 import spaceRebellion from "@/assets/space-rebellion.jpg";
 

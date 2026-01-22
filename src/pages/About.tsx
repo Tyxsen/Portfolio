@@ -7,6 +7,7 @@ import aboutWorkspace from "@/assets/personal-picture.jpeg";
 
 const About = () => {
   const skills = [
+    { category: "Unreal Engine", items: ["Blueprint"] },
     { category: "Unity", items: ["C#", "3D/2D", "UI/UX"] },
     { category: "C++", items: ["SFML", "SDL", "MongoDB"] },
     { category: "Python", items: ["Pygame", "Databricks"] },
@@ -65,8 +66,8 @@ const About = () => {
               <div className="mt-8">
                 <Button size="lg">
                   <a 
-                      href="src\assets\Timeo_DELMON_CV.pdf"
-                      download="Timeo_DELMON_CV.pdf" 
+                      href="/CV_Timeo_DELMON.pdf"
+                      download="CV_Timeo_DELMON.pdf" 
                       className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-10 px-4 py-2 text-primary-foreground"
                   >
                   <Download className="mr-2 h-5 w-5"/>
