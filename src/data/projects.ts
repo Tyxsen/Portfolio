@@ -1,3 +1,4 @@
+import pokeUnreal from "@/assets/poke-unreal.png";
 import pawsOfThievery from "@/assets/paws-of-thievery_gameplay.png";
 import legendOfGevievre from "@/assets/legend-of-gevievre.jpg";
 import spaceRebellion from "@/assets/space-rebellion.jpg";
@@ -17,6 +18,26 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "poke-unreal",
+    title: "PokeUnreal",
+    category: "Unreal Engine",
+    description:
+      "Un jeu pokémon like où le joueur peut capturer des pokémons dans la nature et remplir son pokédex en les prenant en photo.",
+    image: pokeUnreal,
+    year: "2025",
+    type: "professional",
+    fullDescription:
+      "Création d'un premier jeu sur Unreal Engine avec mon école. Nous avions pour le thème du jeu, le mot 'Vignette'. Avec mon binôme de groupe, Tristan Van Laecke, nous avons donc opté pour réaliser un jeu ressemblant fort à pokémon mais dans un autre style. Le but de notre jeu est de prendre en photo des pokémons pour les capturer et ainsi remplir son pokédex. Lors de ce projet, j'ai pu apprendre à réaliser plsuieurs mécaniques sur Unreal Engine tel que la capture de pokémon par l'appareil photo, la gestion du pokédex mais également la gestion de sauvegarde du jeu.",
+    role: "Création du pokédex, de la capture et gestion de la sauvegarde du jeu et design des menus du jeu.",
+    technologies: [
+      "Unral Engine",
+    ],
+    links: [
+      { name: "Github", url :"https://github.com/Tyxsen/PokeUnreal/releases/tag/V1" },
+      { name: "Itch.io", url: "https://skyrenn.itch.io/pokeunreal"},
+    ],
+  },
   {
     id: "paws-of-thievery",
     title: "Paws of Thievery",
