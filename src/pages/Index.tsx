@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useTranslation, Trans } from "react-i18next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
@@ -13,6 +14,7 @@ import heroBanner from "@/assets/hero-banner.jpg";
 const Index = () => {
   const professionalProjects = getProfessionalProjects();
   const personalProjects = getPersonalProjects();
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen bg-background">
@@ -36,16 +38,19 @@ const Index = () => {
               Timéo DELMON
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
-              Bonjour et bienvenue sur mon Portfolio, 
-              je m'appelle Timéo Delmon et je suis développeur spécialisé dans le jeu vidéo.
-              Je suis actuellement dans ma période d'études au Gaming Campus en 3ème année.<br />
-              <br />
-              Vous pourrez retrouver mes différents projets dans la rubrique "<span className="text-primary">Projets</span>".
+              <Trans i18nKey="index.hero_desc">
+              {}
+              <br /> 
+              {}
+              <br /> 
+              {}
+              <span className="text-primary font-medium">Projets</span>
+              </Trans>
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in">
               <Button size="lg" asChild>
                 <Link to="/projects">
-                  Voir mes projets
+                  {t('index.hero_cta')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -60,15 +65,15 @@ const Index = () => {
           <div className="flex items-center justify-between mb-12">
             <div>
               <h2 className="font-display text-4xl font-bold mb-2">
-                Projets Professionnels
+                {t('index.pro_title')}
               </h2>
               <p className="text-muted-foreground">
-                Projets que j'ai dû réaliser dans le cadre de mes études.
+                {t('index.pro_subtitle')}
               </p>
             </div>
             <Button variant="ghost" asChild className="group">
               <Link to="/projects">
-                Tout voir
+                {t('common.view_all')}
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -88,15 +93,15 @@ const Index = () => {
           <div className="flex items-center justify-between mb-12">
             <div>
               <h2 className="font-display text-4xl font-bold mb-2">
-                Projets Personnels
+                {t('index.perso_title')}
               </h2>
               <p className="text-muted-foreground">
-                Projets que j'ai réalisé en dehors de mon parcours scolaire
+                {t('index.perso_subtitle')}
               </p>
             </div>
             <Button variant="ghost" asChild className="group">
               <Link to="/projects">
-                Tout voir
+                {t('common.view_all')}
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>

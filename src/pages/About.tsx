@@ -1,4 +1,5 @@
 import { Download } from "lucide-react";
+import { useTranslation, Trans } from "react-i18next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,32 +7,34 @@ import { Card } from "@/components/ui/card";
 import aboutWorkspace from "@/assets/personal-picture.jpeg";
 
 const About = () => {
+  const { t, i18n } = useTranslation();
+
   const skills = [
     { category: "Unreal Engine", items: ["Blueprint"] },
     { category: "Unity", items: ["C#", "3D/2D", "UI/UX"] },
     { category: "C++", items: ["SFML", "SDL", "MongoDB"] },
     { category: "Python", items: ["Pygame", "Databricks"] },
-    { category: "Outils", items: ["Git", "Figma", "Miro"] },
+    { category: t('about.skills_tools'), items: ["Git", "Figma", "Miro"] },
   ];
 
   const experiences = [
     {
-      role: "Stagiaire Data Analyste",
+      role: t('about.exp_engie_role'),
       company: "ENGIE - Courbevoie",
-      period: "Mai 2024 - Juillet 2024",
-      description: "Découverte du monde de la data analyse. Dévéloppement de bilans d'éléctricité en Python pour des particuliers.",
+      period: t('about.exp_engie_date'),
+      description: t('about.exp_engie_desc'),
     },
     {
-      role: "Stage d'observation (3ème)",
+      role: t('about.exp_rtl_role'),
       company: "RTL - Neuilly-sur-Seine",
-      period: "Février 2019",
-      description: "Participation à la régie de programme radio dans le cadre de mon stage de 3ème.",
+      period: t('about.exp_rtl_date'),
+      description: t('about.exp_rtl_desc'),
     },
     {
-      role: "Projet GStudio",
+      role: t('about.exp_gstudio_role'),
       company: "Gaming Campus",
-      period: "Mai 2025 - Août 2025",
-      description: "Réalisation d'un projet de jeu vidéo en groupe de 5 développeurs et 2 artistes.",
+      period: t('about.exp_gstudio_date'),
+      description: t('about.exp_gstudio_desc'),
     },
   ];
 
@@ -44,34 +47,31 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div>
               <h1 className="font-display text-5xl md:text-6xl font-bold mb-6">
-                À propos de{" "}
+                <Trans i18nKey="about.title">
+                {}
                 <span className="text-primary glow-text">moi</span>
+                </Trans>
               </h1>
               <div className="space-y-4 text-lg text-muted-foreground">
                 <p>
-                  Passionné par les jeux vidéos et le développement, j'ai choisi de
-                  faire mes études à l'école Gaming Campus pour me spécialiser
-                  dans le développement de jeux vidéos.
+                  {t('about.bio_p1')}
                 </p>
                 <p>
-                  J'ai obtenu mon baccalauréat en 2023 et depuis j'ai réalisé plusieurs
-                  projets avec mon école car nous travaillons par semaines de projets.
+                  {t('about.bio_p2')}
                 </p>
                 <p>
-                  J'ai de mon côté pris le temps de faire du blueprint sur Unreal Engine 5
-                  pour apprendre en parallèle de mes études et également de m'améliorer sur Unity que
-                  j'ai déjà parcouru en cours.
+                  {t('about.bio_p3')}
                 </p>
               </div>
               <div className="mt-8">
-                <Button size="lg">
+                <Button size="lg" asChild>
                   <a 
-                      href="/CV_Timeo_DELMON.pdf"
-                      download="CV_Timeo_DELMON.pdf" 
-                      className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-10 px-4 py-2 text-primary-foreground"
+                    href={i18n.language.startsWith('en') ? "/English_Timeo_DELMON_CV.pdf" : "/Timeo_DELMON_CV.pdf"}
+                    download={i18n.language.startsWith('en') ? "CV_Timeo_DELMON_EN.pdf" : "CV_Timeo_DELMON.pdf"} 
+                    className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-10 px-4 py-2 text-primary-foreground"
                   >
-                  <Download className="mr-2 h-5 w-5"/>
-                  Télécharger mon CV
+                    <Download className="mr-2 h-5 w-5"/>
+                    {t('about.cv_button')}
                   </a>
                 </Button>
               </div>
@@ -90,7 +90,7 @@ const About = () => {
           {/* Skills */}
           <div className="mb-20">
             <h2 className="font-display text-4xl font-bold mb-12">
-              Compétences
+              {t('about.skills_title')}
             </h2>
             <div className="grid md:grid-cols-4 gap-8">
               {skills.map((skillGroup) => (
@@ -117,7 +117,7 @@ const About = () => {
           {/* Experience */}
           <div>
             <h2 className="font-display text-4xl font-bold mb-12">
-              Expérience
+              {t('about.exp_title')}
             </h2>
             <div className="space-y-8">
               {experiences.map((exp, index) => (

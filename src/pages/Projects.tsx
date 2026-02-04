@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
@@ -6,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { projects } from "@/data/projects";
 
 const Projects = () => {
+  const { t } = useTranslation();
+
   const [filter, setFilter] = useState<"all" | "professional" | "personal">(
     "all"
   );
@@ -23,12 +26,11 @@ const Projects = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mb-16">
             <h1 className="font-display text-5xl md:text-6xl font-bold mb-6">
-              Tous mes{" "}
-              <span className="text-primary glow-text">Projets</span>
+              {t('projects.title')} {""}
+              <span className="text-primary glow-text">{t('projects.title_accent')}</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Voici quelques-uns de mes projets professionnels
-              realisés au Gaming Campus.
+              {t('projects.desc')}
             </p>
           </div>
 
@@ -38,19 +40,19 @@ const Projects = () => {
               variant={filter === "all" ? "default" : "outline"}
               onClick={() => setFilter("all")}
             >
-              Tous les projets
+              {t('projects.filter_all')}
             </Button>
             <Button
               variant={filter === "professional" ? "default" : "outline"}
               onClick={() => setFilter("professional")}
             >
-              Professionnels
+              {t('projects.filter_pro')}
             </Button>
             <Button
               variant={filter === "personal" ? "default" : "outline"}
               onClick={() => setFilter("personal")}
             >
-              Personnels
+              {t('projects.filter_perso')}
             </Button>
           </div>
 

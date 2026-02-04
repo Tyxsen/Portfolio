@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,6 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import { getProjectById } from "@/data/projects";
 
 const ProjectDetail = () => {
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language.startsWith('en');
+
   const { id } = useParams<{ id: string }>();
   const project = id ? getProjectById(id) : null;
 
@@ -17,12 +21,12 @@ const ProjectDetail = () => {
         <div className="container mx-auto px-6 pt-32">
           <div className="text-center">
             <h1 className="font-display text-4xl font-bold mb-4">
-              Projet non trouvé
+              {t('common.not_found')}
             </h1>
             <Button asChild>
               <Link to="/projects">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Retour aux projets
+                {t('common.back')}
               </Link>
             </Button>
           </div>
@@ -42,7 +46,7 @@ const ProjectDetail = () => {
           <Button variant="ghost" asChild className="mb-8">
             <Link to="/projects">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Retour aux projets
+              {t('common.back')}
             </Link>
           </Button>
 
@@ -58,7 +62,7 @@ const ProjectDetail = () => {
               {project.title}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl">
-              {project.description}
+              {isEn ? project.description_en : project.description}
             </p>
           </div>
 
@@ -75,13 +79,13 @@ const ProjectDetail = () => {
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <div>
               <h3 className="font-display text-lg font-semibold mb-4 text-primary">
-                Mon Rôle
+                {t('projectDetail.role_label')}
               </h3>
-              <p className="text-muted-foreground">{project.role}</p>
+              <p className="text-muted-foreground">{isEn ? project.role_en : project.role}</p>
             </div>
             <div>
               <h3 className="font-display text-lg font-semibold mb-4 text-primary">
-                Technologies
+                {t('projectDetail.tech_label')}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
@@ -93,7 +97,7 @@ const ProjectDetail = () => {
             </div>
             <div>
               <h3 className="font-display text-lg font-semibold mb-4 text-primary">
-                Année
+                {t('projectDetail.year_label')}
               </h3>
               <p className="text-muted-foreground">{project.year}</p>
             </div>
@@ -102,10 +106,10 @@ const ProjectDetail = () => {
           {/* Project Description */}
           <div className="max-w-3xl mb-12">
             <h2 className="font-display text-3xl font-bold mb-6">
-              À propos du projet
+              {t('projectDetail.about_label')}
             </h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              {project.fullDescription}
+              {isEn ? project.fullDescription_en : project.fullDescription}
             </p>
           </div>
 
