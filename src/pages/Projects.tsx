@@ -1,22 +1,11 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
-import { Button } from "@/components/ui/button";
 import { projects } from "@/data/projects";
 
 const Projects = () => {
   const { t } = useTranslation();
-
-  const [filter, setFilter] = useState<"all" | "professional" | "personal">(
-    "all"
-  );
-
-  const filteredProjects =
-    filter === "all"
-      ? projects
-      : projects.filter((p) => p.type === filter);
 
   return (
     <div className="min-h-screen bg-background">
@@ -34,31 +23,9 @@ const Projects = () => {
             </p>
           </div>
 
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap gap-4 mb-12">
-            <Button
-              variant={filter === "all" ? "default" : "outline"}
-              onClick={() => setFilter("all")}
-            >
-              {t('projects.filter_all')}
-            </Button>
-            <Button
-              variant={filter === "professional" ? "default" : "outline"}
-              onClick={() => setFilter("professional")}
-            >
-              {t('projects.filter_pro')}
-            </Button>
-            <Button
-              variant={filter === "personal" ? "default" : "outline"}
-              onClick={() => setFilter("personal")}
-            >
-              {t('projects.filter_perso')}
-            </Button>
-          </div>
-
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <ProjectCard key={project.id} {...project} />
             ))}
           </div>

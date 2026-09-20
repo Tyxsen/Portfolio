@@ -10,7 +10,7 @@ const About = () => {
   const { t, i18n } = useTranslation();
 
   const skills = [
-    { category: "Unreal Engine", items: ["Blueprint"] },
+    { category: "Unreal Engine", items: ["Blueprint", "C++"] },
     { category: "Unity", items: ["C#", "3D/2D", "UI/UX"] },
     { category: "C++", items: ["SFML", "SDL", "MongoDB"] },
     { category: "Python", items: ["Pygame", "Databricks"] },
@@ -18,6 +18,18 @@ const About = () => {
   ];
 
   const experiences = [
+    {
+      role: t('about.exp_namseoul_role'),
+      company: "Namseoul University",
+      period: t('about.exp_namseoul_date'),
+      description: t('about.exp_namseoul_desc'),
+    },
+    {
+      role: t('about.exp_cloudtemple_role'),
+      company: "Cloud Temple",
+      period: t('about.exp_cloudtemple_date'),
+      description: t('about.exp_cloudtemple_desc'),
+    },
     {
       role: t('about.exp_engie_role'),
       company: "ENGIE - Courbevoie",
@@ -61,6 +73,9 @@ const About = () => {
                 </p>
                 <p>
                   {t('about.bio_p3')}
+                </p>
+                <p>
+                  {t('about.bio_p4')}
                 </p>
               </div>
               <div className="mt-8">

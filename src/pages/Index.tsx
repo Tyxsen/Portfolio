@@ -5,15 +5,10 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
-import {
-  getProfessionalProjects,
-  getPersonalProjects,
-} from "@/data/projects";
+import { projects } from "@/data/projects";
 import heroBanner from "@/assets/hero-banner.jpg";
 
 const Index = () => {
-  const professionalProjects = getProfessionalProjects();
-  const personalProjects = getPersonalProjects();
   const { t } = useTranslation();
 
   return (
@@ -59,16 +54,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* School Projects */}
+      {/* Projects */}
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-12">
             <div>
               <h2 className="font-display text-4xl font-bold mb-2">
-                {t('index.pro_title')}
+                {t('index.projects_title')}
               </h2>
               <p className="text-muted-foreground">
-                {t('index.pro_subtitle')}
+                {t('index.projects_subtitle')}
               </p>
             </div>
             <Button variant="ghost" asChild className="group">
@@ -80,42 +75,14 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {professionalProjects.slice(0, 3).map((project) => (
+            {projects.map((project) => (
               <ProjectCard key={project.id} {...project} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Personal Projects */}
-      <section className="py-20 bg-card/30">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <h2 className="font-display text-4xl font-bold mb-2">
-                {t('index.perso_title')}
-              </h2>
-              <p className="text-muted-foreground">
-                {t('index.perso_subtitle')}
-              </p>
-            </div>
-            <Button variant="ghost" asChild className="group">
-              <Link to="/projects">
-                {t('common.view_all')}
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {personalProjects.map((project) => (
-              <ProjectCard key={project.id} {...project} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Footer />  
+      <Footer />
     </div>
   );
 };

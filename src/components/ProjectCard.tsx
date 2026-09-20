@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Card } from "./ui/card";
 import { useTranslation } from "react-i18next";
+import type { ProjectMedia } from "@/data/projects";
 
 interface ProjectCardProps {
   id: string;
@@ -9,7 +10,7 @@ interface ProjectCardProps {
   category: string;
   description: string;
   description_en: string;
-  image: string;
+  media: ProjectMedia[];
   year: string;
 }
 
@@ -19,22 +20,34 @@ const ProjectCard = ({
   category,
   description,
   description_en,
-  image,
+  media,
   year,
 }: ProjectCardProps) => {
   const { t, i18n } = useTranslation();
 
   const isEn = i18n.language.startsWith('en');
+  const cover = media[0];
 
   return (
     <Link to={`/project/${id}`}>
       <Card className="group overflow-hidden border-0 bg-card project-card-hover">
         <div className="relative aspect-[16/10] overflow-hidden">
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+          {cover.type === "video" ? (
+            <video
+              src={cover.src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <img
+              src={cover.src}
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
             <div className="flex items-center gap-2 text-primary">

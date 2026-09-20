@@ -5,7 +5,16 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import { getProjectById } from "@/data/projects";
+import { useEffect, useState } from "react";
 
 const ProjectDetail = () => {
   const { t, i18n } = useTranslation();
@@ -13,6 +22,15 @@ const ProjectDetail = () => {
 
   const { id } = useParams<{ id: string }>();
   const project = id ? getProjectById(id) : null;
+
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => setCurrent(api.selectedScrollSnap()));
+  }, [api]);
 
   if (!project) {
     return (
@@ -66,13 +84,54 @@ const ProjectDetail = () => {
             </p>
           </div>
 
-          {/* Project Image */}
-          <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-12">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
+          {/* Project Media */}
+          <div className="mb-12">
+            <Carousel setApi={setApi} className="w-full">
+              <CarouselContent>
+                {project.media.map((item, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
+                      {item.type === "video" ? (
+                        <video
+                          src={item.src}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <img
+                          src={item.src}
+                          alt={`${project.title} ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              {project.media.length > 1 && (
+                <>
+                  <CarouselPrevious className="left-4 -translate-y-1/2" />
+                  <CarouselNext className="right-4 -translate-y-1/2" />
+                </>
+              )}
+            </Carousel>
+            {project.media.length > 1 && (
+              <div className="flex justify-center gap-2 mt-4">
+                {project.media.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => api?.scrollTo(index)}
+                    aria-label={`${index + 1}`}
+                    className={`h-2 w-2 rounded-full transition-colors ${
+                      index === current ? "bg-primary" : "bg-muted-foreground/30"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Project Details Grid */}
